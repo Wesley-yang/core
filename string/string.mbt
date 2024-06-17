@@ -82,7 +82,7 @@ test "debug_write" {
   @assertion.assert_eq(repr("\r"), "\"\\r\"")?
   @assertion.assert_eq(repr("\b"), "\"\\b\"")?
   @assertion.assert_eq(repr("\t"), "\"\\t\"")?
-  @assertion.assert_eq(repr("\x00"), "\"\\x00\"")?
+  @assertion.assert_eq(repr("\x00"), "\"\\u0000\"")?
   @assertion.assert_eq(repr("abc'\"def\\"), "\"abc'\\\"def\\\\\"")?
 }
 

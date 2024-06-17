@@ -148,8 +148,7 @@ pub fn debug_write(self : String, buf : Buffer) -> Unit {
         let code = c.to_int()
         if code < 0x20 {
           flush_segment(i)
-          buf.write_char('\\')
-          buf.write_char('x')
+          buf.write_string("\\u00")
           buf.write_char(to_hex_digit(code / 16))
           buf.write_char(to_hex_digit(code % 16))
         }
