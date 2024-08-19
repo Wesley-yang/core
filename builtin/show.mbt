@@ -189,7 +189,7 @@ pub impl[X : Show] Show for ArrayView[X] with output(self, logger) {
 pub fn to_string(self : Char) -> String {
   let bytes = Bytes::new(4)
   let len = bytes.set_utf16_char(0, self)
-  bytes.sub_string(0, len)
+  bytes.sub_unchecked_string(0, len)
 }
 
 pub impl Show for Char with output(self, logger) {

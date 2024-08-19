@@ -26,7 +26,7 @@ fn unsafe_sub_string(
 /// 
 /// @alert unsafe "This function does not check whether the input bytes are valid utf16 encoded sequences."
 pub fn to_unchecked_string(self : Bytes) -> String {
-  self.sub_string(0, self.length())
+  self.sub_unchecked_string(0, self.length())
 }
 
 /// Return a new String, containing the subsequence of `self` that
