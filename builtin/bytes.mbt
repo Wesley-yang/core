@@ -37,7 +37,11 @@ pub fn to_unchecked_string(self : Bytes) -> String {
 /// subsequence is a valid UTF16 sequence.
 /// 
 /// @alert unsafe "This function does not check whether the input bytes are valid utf16 encoded sequences."
-pub fn sub_unchecked_string(self : Bytes, byte_offset : Int, byte_length : Int) -> String {
+pub fn sub_unchecked_string(
+  self : Bytes,
+  byte_offset : Int,
+  byte_length : Int
+) -> String {
   if byte_length < 0 ||
     byte_offset < 0 ||
     byte_offset + byte_length > self.length() {
@@ -46,7 +50,6 @@ pub fn sub_unchecked_string(self : Bytes, byte_offset : Int, byte_length : Int) 
     unsafe_sub_string(self, byte_offset, byte_length)
   }
 }
-
 
 /// Create a new String with the given bytes.
 /// 
